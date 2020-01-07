@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS Filter Tester</title>
+        <link rel="stylesheet" href="/css/master.css">
+        <script src="https://unpkg.com/vue" type="text/javascript"></script>
+    </head>
+    <body>
+        
+        <div id="vue-app">
+                <main>
+                    <h1>CSS Filter Tester</h1>                
+            
+                    <div class="wrapper-2">
+                    
+                    <div class="wrapper">
+                        <img v-bind:style="compStyles" src="/images/IMG_1241.JPG" alt="">
+                        </div>
+                    
+                    <div class="filter-wrapper">
+                        
+                        <div>
+                        
+                        <input v-model="blur" type="range" min="0" max="100" id="blur" name="filter" value="0">
+                    
+                        <label for="blur">Blur</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="brightness" type="range" min="0" max="500" id="brightness" name="filter" value="0">
+                        <label for="brightness">Brightness</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="contrast" type="range" min="0" max="500" id="contrast" name="filter" value="contrast">
+                        <label for="contrast">Contrast</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="dropShadow1" type="text" id="dropShadow1"  value="">
+                        <input v-model="dropShadow2" type="text" id="dropShadow2" value="">
+                        <input v-model="dropShadow3" type="text" id="dropShadow3" value="">
+                        <input v-model="dropShadow4" type="color" id="dropShadow4" value="">
+                        <label for="dropShadow">Drop-shadow</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="grayscale" type="range" min="0" max="100" id="grayscale" name="filter" value="grayscale">
+                        <label for="grayscale">Grayscale</label>
+                        </div>
+
+                        <div>
+                        <input v-model="hueRotate" type="range" min="0" max="360" id="hue-rotate" name="filter" value="hueRotate">
+                        <label for="hueRotate">Hue-rotate</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="invert" type="range" id="invert" min="0" max="100" name="filter" value="invert">
+                        <label for="invert">Invert</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="opacity" type="range" min="0" max="1" step="0.01" id="opacity" name="filter" value="opacity">
+                        <label for="opacity">Opacity</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="saturate" type="range" min="0" max="1000" id="saturate" name="filter" value="saturate">
+                        <label for="saturate">Saturate</label>
+                        </div>
+                        
+                        <div>
+                        <input v-model="sepia" type="range" id="sepia" min="0" max="100" name="filter" value="sepia">
+                        <label for="sepia">Sepia</label>
+                        </div>
+                        
+                    </div><!-- end of filter-wrapper -->
+                </div><!-- end of wrapper-2 -->
+                
+                <div class="css-code">
+                    <button v-on:click="copyCode()" type="button" name="button">Click to Copy Code</button>
+                    
+                    <textarea class="filterStyles">
+img { filter: {{ filterStyles.filter }} </textarea>
+                    
+                </div> <!-- end of css-code -->
+                
+                </main>
+        </div>
+        <script type="text/javascript" src="/js/app.js"></script>
+    </body>
+</html>
